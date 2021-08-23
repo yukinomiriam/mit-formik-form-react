@@ -11,7 +11,7 @@ function App() {
 			pswField: ''
 		},
 		onSubmit: values => {
-			console.log('form: ', values);
+			alert("Login Successful");
 		},
 		validate: values => {
 			let errors = {};
@@ -29,12 +29,12 @@ function App() {
 		<div className="formContainer">
 			<form onSubmit={formik.handleSubmit}>	
 				<div>Email</div>
-				<input name="emailField" type="text" onChange={formik.handleChange} value={formik.values.emailField} />
-				{formik.errors.emailError ? <div style={{color:'red'}}>{formik.errors.emailError}</div>:null}
+				<input id="emailField" name="emailField" type="text" onChange={formik.handleChange} value={formik.values.emailField} />
+				{formik.errors.emailError ? <div id="emailError" style={{color:'red'}}>{formik.errors.emailError}</div>:null}
 				<div>Password</div>
-				<input name="pswField" type="text" onChange={formik.handleChange} value={formik.values.pswField} />
-				{formik.errors.pswError ? <div style={{color:'red'}}>{formik.errors.pswError}</div>:null}
-				<button name="submitBtn" type="submit">Submit</button>
+				<input id="pswField" name="pswField" type="text" onChange={formik.handleChange} value={formik.values.pswField} />
+				{formik.errors.pswError ? <div id="pswError" style={{color:'red'}}>{formik.errors.pswError}</div>:null}
+				<button id="submitBtn" name="submitBtn" type="submit">Submit</button>
 			</form>
 		</div>
 	
